@@ -1,0 +1,19 @@
+
+
+
+.recipepreviewer {
+    height: 200px;
+    width: 150px;
+    border-radius: 10px;
+    background-color: #2f2f2f;
+}
+
+.recipepreviewer.first {
+    height: 200px;
+    width: 280px;
+}
+
+
+.banner-box {
+    
+}

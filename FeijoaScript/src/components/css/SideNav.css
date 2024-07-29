@@ -1,0 +1,21 @@
+
+
+
+.sidenav {
+  height: 100%;
+  width: 55px;
+  display: flex;
+  text-align: center;
+
+  flex-direction: column;
+  /*box-sizing: content-box;*/
+
+  background-color: rgb(30, 31, 34);
+
+}
+
+/*button {*/
+/*  width: 34px;*/
+
+/*}*/
+
