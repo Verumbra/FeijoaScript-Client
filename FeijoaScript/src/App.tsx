@@ -4,6 +4,9 @@ import { invoke } from "@tauri-apps/api/tauri";
 import "./App.css";
 import SideNav from "./components/SideNav.tsx";
 
+import {useSelector, useDispatch} from "react-redux";
+import {RootState} from "./store/store.ts";
+
 function App() {
   const [greetMsg, setGreetMsg] = useState("");
   const [name, setName] = useState("");
@@ -13,11 +16,14 @@ function App() {
     setGreetMsg(await invoke("greet", { name }));
   }
 
+  const currentPage = useSelector((state: RootState) => state.view.page);
+
   return (
     <div className="container">
         <SideNav/>
         <div className="greet">
-          <h1>Welcome to Tauri!a little mod here</h1>
+          {currentPage}
+          <h1>Welcome to Tauri!</h1>
 
           <div className="row">
             <a href="https://vitejs.dev" target="_blank">

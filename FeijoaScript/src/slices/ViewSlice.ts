@@ -5,9 +5,9 @@ interface ViewStatus {
 }
 
 const initialState: ViewStatus = {
-    page: 'home',
+    page: 'HOME',
 }
-
+//SHOULD ONLY HAVE 7 POSSIBLE VALUES: HOME, READER, JOURNAL, DISCOVERY, LIBRARY, GROCERY, SUBSTITUTION
 const veiwSlice = createSlice({
     name: 'current-view',
     initialState,
