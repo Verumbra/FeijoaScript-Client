@@ -10,7 +10,7 @@ interface SettingConfig {
     uiSize: string,
 }
 
-interface User {
+ export interface User {
     authed: AuthState,
     id: string | null,
     name: string | null,

@@ -6,7 +6,7 @@ import RStepsSubpanel from "./RStepsSubpanel.tsx";
 import RDesrciptionPanel from "./RDesrciptionPanel.tsx";
 import RIngredentListPanel from "./RIngredentListPanel.tsx";
 
-
+import '../css/ReaderView.css';
 
 interface Props {
     children?: ReactNode;
@@ -17,7 +17,7 @@ interface Props {
 //possiple feature: be able to
 
 const ReaderView: React.FC<Props> = ({children}) => {
-    return <div>
+    return <div className='reader-view-container'>
         <RImageHeaderPanel></RImageHeaderPanel>
         <RNamePanel>Name</RNamePanel>
         <RDesrciptionPanel>

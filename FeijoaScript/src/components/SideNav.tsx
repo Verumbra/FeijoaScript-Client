@@ -72,7 +72,7 @@ const SideNav: React.FC<ChildProps> = ({children}) => {
         <a className="substitution-page">
             <button
                 className={'substitution-page-button ' + `${currentView === 'SUBSTITUTION' ? 'active' : ''}`}
-                onClick={() => setGrocery()}>
+                onClick={() => setsubstitution()}>
                 S
             </button>
         </a>

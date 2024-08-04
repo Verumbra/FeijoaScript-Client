@@ -1,0 +1,30 @@
+@import './Variable.css';
+
+
+
+.reader-view-container {
+
+}
+
+.r-name-panel {
+    background-color: var(--backdrop-color1);
+    min-height: 60px;
+    width: 100%;
+    min-width: 500px;
+}
+
+.r-desription-panel {
+    background-color: var(--backdrop-color2);
+}
+
+.r-ingredent-list-panel {
+    background-color: var(--backdrop-color2);
+}
+
+.r-instruction-panel {
+    background-color: var(--backdrop-color2);
+}
+
+.r-steps-subpanel {
+    background-color: var(--backdrop-color2);
+}

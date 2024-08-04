@@ -1,5 +1,6 @@
 import React, {ReactNode} from "react";
 
+import '../css/ReaderView.css';
 
 interface Props {
     children?: ReactNode;
@@ -7,7 +8,7 @@ interface Props {
 
 
 const RIngredentListPanel: React.FC<Props> = ({ children }) => {
-    return <div>
+    return <div className='r-ingredent-list-panel'>
         {children}
     </div>
 }

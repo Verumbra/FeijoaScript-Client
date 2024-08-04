@@ -12,7 +12,7 @@ interface ingredent {
 }
 
 
-interface Recipe {
+export interface Recipe {
     id: string,
     ownedBy: string,
     name: string,
@@ -63,3 +63,4 @@ const recipeListSlice = createSlice({
 
 export const {updateActive} = recipeListSlice.actions;
 export default recipeListSlice.reducer;
+

@@ -1,6 +1,6 @@
 import React, {ReactNode} from "react";
 
-import "../css/RNamePanel.css";
+import "../css/ReaderView.css";
 
 interface Props {
     children?: ReactNode;

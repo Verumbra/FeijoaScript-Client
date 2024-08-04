@@ -32,6 +32,7 @@
     "@tauri-apps/cli": "^1",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
+    "@types/storybook__react": "^5.2.1",
     "@vitejs/plugin-react": "^4.2.1",
     "scss": "^0.2.4",
     "storybook": "^8.1.11",
