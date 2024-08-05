@@ -29,13 +29,13 @@ const meta: Meta<typeof SideNav> = {
 
 };
 
-/*const Template: StoryObj<typeof SideNav> =({children: ReactNode}) => (
+const Template: StoryObj<typeof SideNav> =({children: ReactNode}) => (
     <Provider store={store}>
         <SideNav></SideNav>
     </Provider>
 )
 
- export const Default = Template.bind({});*/
+ export const Default = Template.bind({});
 
 export default meta;
 type Story = StoryObj<typeof SideNav>;

@@ -1,11 +1,27 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import { invoke } from "@tauri-apps/api/tauri";
-import "./App.css";
-import SideNav from "./components/SideNav.tsx";
 
+//import for css files
+import "./App.css";
+
+//imports for app components
+import SideNav from "./components/SideNav.tsx";
+import HomeView from "./components/HomeView/HomeView.tsx";
+import LibraryView from "./components/LibraryView/LibraryView.tsx";
+import ReaderView from "./components/ReaderView/ReaderView.tsx";
+import JournalView from "./components/JournalView/JournalView.tsx";
+import DiscoveryView from "./components/DiscoveryView/DiscoveryView.tsx";
+import SubstitutionView from "./components/SubstitutionView/SubstitutionView.tsx";
+import GroceryView from "./components/GroceryView/GroceryView.tsx";
+
+//imports for redux
 import {useSelector, useDispatch} from "react-redux";
 import {RootState} from "./store/store.ts";
+
+
+
+
 
 function App() {
   const [greetMsg, setGreetMsg] = useState("");
@@ -18,9 +34,29 @@ function App() {
 
   const currentPage = useSelector((state: RootState) => state.view.page);
 
+  const viewProcessor = () => {
+      switch (currentPage) {
+          case "HOME":
+              return <HomeView/>;
+          case "READER":
+              return <ReaderView/>;
+          case "JOURNAL":
+              return <JournalView/>;
+          case "DISCOVERY":
+              return <DiscoveryView/>;
+          case "LIBRARY":
+              return <LibraryView/>;
+          case "GROCERY":
+              return <GroceryView/>;
+          case "SUBSTITUTION":
+              return <SubstitutionView/>;
+      }
+  }
+
   return (
     <div className="container">
         <SideNav/>
+        {viewProcessor()}
         <div className="greet">
           {currentPage}
           <h1>Welcome to Tauri!</h1>
