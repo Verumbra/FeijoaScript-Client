@@ -6,20 +6,20 @@ interface instructionSection {
     instructions: instruction[],
 }
 
-interface instruction {
+export interface instruction {
     name?: string,
     stepBody: string,
 }
 
-interface ingredient {
+export interface ingredient {
     name: string,
-    ingredientID: string,
+    ingredientID?: string,
     amount: string,
 }
 
 //use the name MAIN if the list is ungrouped.
-interface compasiteIngredients {
-    name: string,
+export interface compasiteIngredients {
+    name?: string,
     ingredients: ingredient[],
 }
 
@@ -51,12 +51,12 @@ const initialState: RecipeList = {
         name: '',
         //image: img,
         description: '',
-        descriptionTags: [],
+        descriptionTags: [''],
         instructions: [],
-        ingredientList: [],
+        ingredientList: [{name:'', ingredients:[{name:'...', ingredientID:'', amount:'...'}]},{name:'', ingredients:[{name:'...', ingredientID:'', amount:'...'}]}],
         isVisible: false,
-        isType: [],
-        favoritedBy: [],
+        isType: [''],
+        favoritedBy: [''],
         recipeArchetype: '',
     }
 }

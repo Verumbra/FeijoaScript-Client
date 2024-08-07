@@ -1,4 +1,7 @@
 import React, {ReactNode} from "react";
+import {useState, useEffect, useCallback} from "react";
+
+//import for sub components
 import RImageHeaderPanel from "./RImageHeaderPanel";
 import RInstructionPanel from "./RInstructionPanel.tsx";
 import RNamePanel from "./RNamePanel.tsx";
@@ -6,7 +9,20 @@ import RStepsSubpanel from "./RStepsSubpanel.tsx";
 import RDesrciptionPanel from "./RDesrciptionPanel.tsx";
 import RIngredentListPanel from "./RIngredentListPanel.tsx";
 
+import {compasiteIngredients, ingredient} from "../../slices/RecipeSlice.ts";
+
+//redux imports
+import {useSelector, useDispatch} from "react-redux";
+import {RootState} from "./store/store.ts";
+import {Recipe} from "../../slices/RecipeSlice.ts";
+
+import {updateActive} from "../../slices/RecipeSlice.ts";
+
+//logic import
+import {RIngredientListProcessor} from "../../FeatureLogic/ReaderLogic.tsx";
+
 import '../css/ReaderView.css';
+import RecipeTestData from "../../stories/mock data/RecipeTestData.ts";
 
 interface Props {
     children?: ReactNode;
@@ -16,22 +32,34 @@ interface Props {
 
 //possiple feature: be able to
 
+
+
+
+
 const ReaderView: React.FC<Props> = ({children}) => {
+    const testing:ReactNode[] = [<div>first div</div>,<div>second div</div>,<div>third div</div>]
+
+    const currentlyViewing = useSelector((state:RootState) => state.recipeList);
+
     return <div className='reader-view-container'>
         <RImageHeaderPanel></RImageHeaderPanel>
-        <RNamePanel>Name</RNamePanel>
+        <RNamePanel>
+            {
+                currentlyViewing.name!==undefined?currentlyViewing.name:"None"
+            }
+        </RNamePanel>
+
         <RDesrciptionPanel>
-            xszdlkfjsovn wsoefjwsal;fvjnw;ofvjnfa';oleihfwsid jvwsjnvwsnvwo evjsdnvwrevslh vnwebw'eioghwnqa'eotgfjhdlbn
+            <h3>{currentlyViewing.description}</h3>{}
         </RDesrciptionPanel>
+
         <RIngredentListPanel>
-            {"1 sifvjsoimvwoeij epifvwjeop\n"}
-            {"2 wseifjws[oe fmnefn eq[kfjmme\n"}
-            {"3 slejfwsomvwserogmfwerog\n"}
+            {RIngredientListProcessor(currentlyViewing.ingredientList)}
         </RIngredentListPanel>
         <RInstructionPanel>
 
-                <RStepsSubpanel>sdgsgfawvAZSDvawegf</RStepsSubpanel>
-                <RStepsSubpanel>sdjvjsovnwefvjsevjnwerovn</RStepsSubpanel>
+            <RStepsSubpanel>sdgsgfawvAZSDvawegf</RStepsSubpanel>
+            <RStepsSubpanel>sdjvjsovnwefvjsevjnwerovn</RStepsSubpanel>
 
         </RInstructionPanel>
         {children}

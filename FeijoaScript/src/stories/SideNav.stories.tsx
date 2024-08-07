@@ -39,8 +39,8 @@ const Template: StoryObj<typeof SideNav> =({children: ReactNode}) => (
 
 export default meta;
 type Story = StoryObj<typeof SideNav>;
-export const Primary: Story = {
+/*export const Primary: Story = {
     args: {
         //todo
     }
-};
+};*/
