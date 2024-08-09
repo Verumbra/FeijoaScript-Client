@@ -19,7 +19,7 @@ import {Recipe} from "../../slices/RecipeSlice.ts";
 import {updateActive} from "../../slices/RecipeSlice.ts";
 
 //logic import
-import {RIngredientListProcessor} from "../../FeatureLogic/ReaderLogic.tsx";
+import {RIngredientListProcessor, RInstructionListProcessor} from "../../FeatureLogic/ReaderLogic.tsx";
 
 import '../css/ReaderView.css';
 import RecipeTestData from "../../stories/mock data/RecipeTestData.ts";
@@ -45,21 +45,19 @@ const ReaderView: React.FC<Props> = ({children}) => {
         <RImageHeaderPanel></RImageHeaderPanel>
         <RNamePanel>
             {
-                currentlyViewing.name!==undefined?currentlyViewing.name:"None"
+                currentlyViewing.activeRecipe.name!==undefined?currentlyViewing.activeRecipe.name:"None"
             }
         </RNamePanel>
 
         <RDesrciptionPanel>
-            <h3>{currentlyViewing.description}</h3>{}
+            <h4>{currentlyViewing.activeRecipe.description}</h4>{}
         </RDesrciptionPanel>
 
         <RIngredentListPanel>
-            {RIngredientListProcessor(currentlyViewing.ingredientList)}
+            {RIngredientListProcessor(currentlyViewing.activeRecipe.ingredientList)}{}
         </RIngredentListPanel>
         <RInstructionPanel>
-
-            <RStepsSubpanel>sdgsgfawvAZSDvawegf</RStepsSubpanel>
-            <RStepsSubpanel>sdjvjsovnwefvjsevjnwerovn</RStepsSubpanel>
+            {RInstructionListProcessor(RecipeTestData.instructions)}
 
         </RInstructionPanel>
         {children}

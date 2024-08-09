@@ -7,4 +7,15 @@
     --backdrop-color2: #262929;
     --backdrop-hightlight-color1: #4e686c;
     --font-color-dark: #151717;
+
+
+    --primary-color-rgb: 199,194,237;
+    --secondary-color-rgb: 161,208,206;
+    --accent-color1-rgb: 237,183,205;
+    --accent-color2-rgb: 163, 109, 132;
+    --backdrop-color1-rgb: 73, 87, 86;
+    --backdrop-color2-rgb: 38, 41, 41;
+    --backdrop-hightlight-color1-rgb:78, 104, 108;
+    --font-color-dark-rgb: 21, 23, 23;
+
 }

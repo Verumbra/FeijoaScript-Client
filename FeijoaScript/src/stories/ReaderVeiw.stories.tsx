@@ -35,7 +35,7 @@ const Template: StoryObj<typeof ReaderViewMock> = ({children: any})=> (
 
 
     <Provider store={store}>
-        <ReaderViewMock></ReaderViewMock>
+        <ReaderViewMock/>
     </Provider>
 )
 

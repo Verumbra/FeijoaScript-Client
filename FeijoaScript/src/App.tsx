@@ -56,10 +56,10 @@ function App() {
   return (
     <div className="container">
         <SideNav/>
-        {viewProcessor()}
-        <div className="greet">
+        <div className="view-container">{viewProcessor()}</div>
+        {/*<div className="greet">
           {currentPage}
-          <h1>Welcome to Tauri!</h1>
+            <h1>Welcome to Tauri!</h1>
 
           <div className="row">
             <a href="https://vitejs.dev" target="_blank">
@@ -91,7 +91,7 @@ function App() {
           </form>
 
           <p>{greetMsg}</p>
-        </div>
+        </div>*/}
     </div>
   );
 }

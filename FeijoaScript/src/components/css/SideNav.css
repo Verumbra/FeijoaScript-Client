@@ -5,6 +5,8 @@
   height: 100%;
   width: 55px;
   display: flex;
+
+  position: sticky;
   text-align: center;
 
   flex-direction: column;
@@ -13,6 +15,8 @@
   background-color: rgb(30, 31, 34);
 
 }
+
+
 
 
 

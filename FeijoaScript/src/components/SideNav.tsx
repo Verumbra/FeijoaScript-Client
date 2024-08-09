@@ -4,6 +4,8 @@ import {useSelector, useDispatch} from "react-redux";
 import {setPage} from "../slices/ViewSlice.ts";
 import {RootState} from "../store/store.ts";
 
+import ReaderIcon from "./Icons/ReaderIcon.tsx";
+
 import "./css/SideNav.css";
 
 
@@ -59,7 +61,7 @@ const SideNav: React.FC<ChildProps> = ({children}) => {
             <button
                 className={'reader-page-button ' + `${currentView === 'READER' ? 'active' : ''}`}
                 onClick={() => setReader()}>
-                R
+                <ReaderIcon/>
             </button>
         </a>
         <a className="grocery-list-page">

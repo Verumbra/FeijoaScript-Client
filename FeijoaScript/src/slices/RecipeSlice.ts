@@ -1,7 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import TestRecipe from "../stories/mock data/RecipeTestData.ts";
 
 
-interface instructionSection {
+ export interface instructionSection {
     name: string,
     instructions: instruction[],
 }
@@ -44,21 +45,23 @@ interface RecipeList {
 
 }
 
+const startActiveRecipe = {
+    id: '',
+    ownedBy: '',
+    name: '',
+    //image: img,
+    description: '',
+    descriptionTags: [''],
+    instructions: [],
+    ingredientList: [{name:'', ingredients:[{name:'...', ingredientID:'', amount:'...'}]},{name:'', ingredients:[{name:'...', ingredientID:'', amount:'...'}]}],
+    isVisible: false,
+    isType: [''],
+    favoritedBy: [''],
+    recipeArchetype: '',
+}
+
 const initialState: RecipeList = {
-    activeRecipe: {
-        id: '',
-        ownedBy: '',
-        name: '',
-        //image: img,
-        description: '',
-        descriptionTags: [''],
-        instructions: [],
-        ingredientList: [{name:'', ingredients:[{name:'...', ingredientID:'', amount:'...'}]},{name:'', ingredients:[{name:'...', ingredientID:'', amount:'...'}]}],
-        isVisible: false,
-        isType: [''],
-        favoritedBy: [''],
-        recipeArchetype: '',
-    }
+    activeRecipe: TestRecipe
 }
 
 

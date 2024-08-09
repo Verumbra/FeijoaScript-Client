@@ -8,6 +8,7 @@ interface Props {
 
 const RNamePanel: React.FC<Props> = ({children}) => {
     return <div className="r-name-panel">
+
         {children}
     </div>
 }

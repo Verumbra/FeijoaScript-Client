@@ -38,9 +38,16 @@ html, body,#root {
   /*padding-top: 10vh;*/
   display: flex;
   flex-direction: row;
+  position: static;
   justify-content: left;
   text-align: center;
   height: 100%;
+  width: 100%;
+}
+
+.view-container {
+  display: flex;
+  overflow: auto;
 }
 
 .greet {

@@ -1,0 +1,1 @@
+import{c}from"./react-redux-Cc0Vav2D.js";const s={page:"HOME"},e=c({name:"current-view",initialState:s,reducers:{setPage:(a,t)=>{a.page=t.payload}}}),{setPage:r}=e.actions,o=e.reducer;export{r as s,o as v};

@@ -19,7 +19,7 @@ import {RootState} from "../../store/store.ts";
 //import {updateActive} from "../../slices/RecipeSlice.ts";
 
 //Logic Import
-import {RIngredientListProcessor} from "../../FeatureLogic/ReaderLogic.tsx";
+import {RIngredientListProcessor, RInstructionListProcessor} from "../../FeatureLogic/ReaderLogic.tsx";
 
 import '../../components/css/ReaderView.css';
 import RecipeTestData from "../mock data/RecipeTestData.ts";
@@ -41,8 +41,14 @@ const ReaderViewMock: React.FC<Props> = ({children}) => {
 
     const currentlyViewing = useSelector((state:RootState) => state.recipeList);
 
+    const topImgStyle = {
+        width: "100%",
+
+    }
+
     return <div className='reader-view-container'>
-        <RImageHeaderPanel><img className="top-image-container" src={image} alt="test"/> </RImageHeaderPanel>
+        <RImageHeaderPanel><img className="top-image-container" src={image} alt="test"/></RImageHeaderPanel>
+        <div className='reader-view-contant-container'>
         <RNamePanel>{RecipeTestData.name}</RNamePanel>
 
         <RDesrciptionPanel>
@@ -53,11 +59,8 @@ const ReaderViewMock: React.FC<Props> = ({children}) => {
             {RIngredientListProcessor(RecipeTestData.ingredientList)}
         </RIngredentListPanel>
         <RInstructionPanel>
-
-            <RStepsSubpanel>Combine the cheese filling ingredients in a medium bowl and set aside. Measure out remaining ingredients.</RStepsSubpanel>
-            <RStepsSubpanel>sdjvjsovnwefvjsevjnwerovn</RStepsSubpanel>
-
-        </RInstructionPanel>
+            {RInstructionListProcessor(RecipeTestData.instructions)}
+        </RInstructionPanel></div>
         {children}
     </div>
 }
