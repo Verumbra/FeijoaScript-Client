@@ -61,7 +61,7 @@ const SideNav: React.FC<ChildProps> = ({children}) => {
             <button
                 className={'reader-page-button ' + `${currentView === 'READER' ? 'active' : ''}`}
                 onClick={() => setReader()}>
-                <ReaderIcon/>
+                <ReaderIcon  color='#ffffff' size={16} />
             </button>
         </a>
         <a className="grocery-list-page">

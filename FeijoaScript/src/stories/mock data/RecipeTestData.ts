@@ -1,4 +1,4 @@
-import {Recipe} from "../../slices/RecipeSlice.ts";
+import {Recipe} from "../../Models/RecipeModel.ts";
 
 const TestRecipe: Recipe = {
     description: "This Lasagna Recipe is easy to make with a creamy ricotta cheese mixture, savory meat sauce, and mozzarella cheese. BONUS: it’s make-ahead and freezer-friendly!",

@@ -5,8 +5,9 @@ import {RootState} from "../store/store.ts";
 
 import RecipePreviewer from "../RecipePreviewer.tsx";
 import HPreviewContainer from "./HPreviewContainer.tsx";
+import ReaderIcon from "../Icons/ReaderIcon.tsx";
 
-
+import "../css/HomeView.css";
 
 interface childProps {
     children?: ReactNode;
