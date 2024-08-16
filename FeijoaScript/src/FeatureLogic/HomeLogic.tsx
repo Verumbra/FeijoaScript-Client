@@ -1,45 +1,82 @@
 import React, {ReactNode} from "react";
 import RecipePreview from "../Models/PreviewModel.ts";
 import HPreviewContainer from "../components/HomeView/HPreviewContainer.tsx";
+import HRPreviewWrapper from "../components/HomeView/HRPreviewWrapper.tsx";
+import RecipePreviewer from "../components/RecipePreviewer.tsx";
+
+import {useSelector} from "react-redux";
+import {RootState} from "../store/store.ts";
 
 
 
 
-function HRecipePreviewProcessor(): ReactNode[] {
-    let sizefoList:number;
-    let Builder:ReactNode[] = [];
+//rewrite these function to be inline in the component that needs them after the global store is correctly configured
 
+export function HRecipePreviewProcessor(props:number): ReactNode[] {
+    console.log(props);
+    let previewList = useSelector((state:RootState) => state.previewList[props].previewList);
 
-}
-
-function HPreviewContainerProcessor(title:string[],inputList:RecipePreview[]):ReactNode[] {
-    let sizefoList = inputList.length;
+    let sizeofList= previewList.length;
+    console.log("value of: "+ sizeofList);
     let Builder:ReactNode[] = [];
 
     switch (true) {
-        case (!sizefoList || !title.length):
-            //todo
-            break;
-        case (sizefoList != title.length):
-            if (sizefoList > title.length) {
-                return Builder.push(<div>Not found</div>)
+        case sizeofList==0 || sizeofList==null || sizeofList==undefined:
+            return Builder;
+        case sizeofList==1:
+            break
+        case sizeofList>1:
+            let i = 0
+            while (i<sizeofList) {
+                Builder.push(<RecipePreviewer  key={i} placeKey={i} catKey={props} indexKey={i}></RecipePreviewer>)
+                i++
             }
-            else {
-                return Builder.push(<div>Not found</div>)
-            }
-
-        case (sizefoList == 1):
             break
 
-        case (sizefoList >= 1):
-            for (let i=0; i<sizefoList; i++) {
+    }
+    return Builder
+}
+
+function getListName(index:number):string[] {
+    let name:string[] = [];
+    let i = 0
+    while(i<index) {
+        name.push(useSelector((state: RootState) => state.previewList[i].name));
+        i++
+    }
+    return name;
+}
+
+//title prop is to be used to give the name of the preview section that wraps the list of cards, while the inputList prop is to be used to select the recuder action that fetches the data from the store or database
+export function HPreviewContainerProcessor(inputList:number):ReactNode[] {
+    //console.log("in function HPreviewContainerProcessor title: "+ title +"inputList: "+inputList);
+
+    let titleList:string[] = getListName(inputList);
+    let Builder:ReactNode[] = [];
+
+    switch (true) {
+        case (inputList==undefined || inputList==null):
+            //todo
+            break;
+
+        case (inputList == 0):
+            Builder.push(<div className="h-home-view" key={0}>
+                <HPreviewContainer title={titleList[0]}>
+                    <HRPreviewWrapper previewListIndex={0}/>
+                </HPreviewContainer>
+            </div>)
+            break
+
+        case (inputList >= 1):
+            let i = 0
+            while (i<inputList){
+                console.log("in HPreviewContainerProcessor loop with the size of previewListIndex "+ i+ " of the "+titleList[i]+" container")
                 Builder.push(<div className="h-home-view" key={i}>
-                    <HPreviewContainer title={title[i]}>
-                        {//todo
-                            HRecipePreviewProcessor()
-                        }
+                    <HPreviewContainer title={titleList[i]}>
+                        <HRPreviewWrapper previewListIndex={i}/>
                     </HPreviewContainer>
                 </div>)
+                i++
             }
             break
     }

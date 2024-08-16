@@ -2,6 +2,7 @@ import {configureStore} from "@reduxjs/toolkit";
 import userSlice from "../slices/UserSlice.ts";
 import recipeListSlice from "../slices/RecipeSlice.ts"
 import viewSlice from "../slices/ViewSlice.ts"
+import recipePreviewListSlice from "../slices/PreviewSlice.ts"
 
 
 const store = configureStore({
@@ -9,6 +10,7 @@ const store = configureStore({
         user: userSlice,
         recipeList: recipeListSlice,
         view: viewSlice,
+        previewList: recipePreviewListSlice,
     }
 });
 

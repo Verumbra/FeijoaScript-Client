@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import {TestPreviewList1, TestPreviewList2, TestPreviewList3, TestPreviewList4} from "../stories/mock data/PreviewTestData.ts";
 
 
 interface RecipePreview {
@@ -9,13 +10,19 @@ interface RecipePreview {
     description?: string;
 }
 
+
+
 interface PreviewList {
-    runningList: RecipePreview[];
+    name: string;
+    previewList: RecipePreview[];
 }
 
-const initialState:PreviewList = {
-    runningList: [],
-}
+ let devOn= true
+let testState= [{name:"runningList", previewList: TestPreviewList1},
+    {name:"bookmarkList", previewList: TestPreviewList4},
+    {name:"ownedList", previewList: TestPreviewList2},];
+
+const initialState:PreviewList[] = devOn? testState : [];
 
 const recipePreviewListSlice = createSlice({
     name: 'previewList',
@@ -24,8 +31,15 @@ const recipePreviewListSlice = createSlice({
         pushList: (state, action: PayloadAction<RecipePreview>) => {
             state.runningList.push(action.payload);
         },
-        pullInitialList: (state, action: PayloadAction<RecipePreview[]>) => {
-            state.runningList = action.payload;
-        }
+        //
+        pushNewList: (state, action: PayloadAction<{key:string, value: PreviewList}>) => {
+            state.push(action.payload.value);
+        },
+        //pushNewItem: (state, action: PayloadAction<{key:string, value: RecipePreview}>) => {}
+
     }
 })
+
+
+export const {pushItem} = recipePreviewListSlice.actions;
+export default recipePreviewListSlice.reducer;

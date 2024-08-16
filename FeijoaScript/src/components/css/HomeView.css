@@ -3,7 +3,7 @@
 
 
 .h-home-view {
-
+    width: 100%;
 }
 
 .h-preview-container {
@@ -19,7 +19,7 @@
 
 }
 
-.h-wrapper-child {
+.hr-preview-wrapper {
     display: flex;
     flex-direction: row;
 }

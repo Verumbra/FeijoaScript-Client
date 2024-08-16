@@ -4,6 +4,7 @@ import {useSelector, useDispatch} from "react-redux";
 import {setPage} from "../slices/ViewSlice.ts";
 import {RootState} from "../store/store.ts";
 
+import HomeIcon from "./Icons/HomeIcon.tsx"
 import ReaderIcon from "./Icons/ReaderIcon.tsx";
 
 import "./css/SideNav.css";
@@ -33,7 +34,7 @@ const SideNav: React.FC<ChildProps> = ({children}) => {
             <button
                 className={'home-page-button ' + `${currentView === 'HOME' ? 'active' : ''}`}
                 onClick={() => setHome()}>
-                H
+                <HomeIcon color='#ffffff' size={20} />
             </button>
         </a>
         <a className="library-page">
@@ -61,7 +62,7 @@ const SideNav: React.FC<ChildProps> = ({children}) => {
             <button
                 className={'reader-page-button ' + `${currentView === 'READER' ? 'active' : ''}`}
                 onClick={() => setReader()}>
-                <ReaderIcon  color='#ffffff' size={16} />
+                <ReaderIcon  color='#ffffff' size={20} />
             </button>
         </a>
         <a className="grocery-list-page">

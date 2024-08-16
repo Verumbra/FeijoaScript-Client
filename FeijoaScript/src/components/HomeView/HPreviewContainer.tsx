@@ -21,9 +21,8 @@ const HPreviewContainer:React.FC<childProps> = ({children,title}) => {
         <div className="h-wrapper">
             <div className="h-preview-container-title">{title}</div>
             <SizeDropButton size={handleSizeCallback}/>
-
         </div>
-        <div className="h-wrapper-child">
+        <div className="hr-preview-wrapper">
             {children}
         </div>
     </div>;

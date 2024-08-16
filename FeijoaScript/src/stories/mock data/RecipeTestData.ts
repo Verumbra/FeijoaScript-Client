@@ -56,4 +56,108 @@ const TestRecipe: Recipe = {
 
 
 
+const secondTestRecipe: Recipe = {
+    description: "This New England Clam Chowder recipe has a creamy broth that's loaded with delicious clams, savory bacon, simple seasonings, and perfectly cooked potatoes",
+    descriptionTags: ["clam","chowder",],
+    favoritedBy: [""],
+    id: "asdftglkhi24sr35klkkjlpikkolmk",
+    ingredientList: [
+        {name: "Ingredients", ingredients: [{name: "thick-cut bacon", ingredientID: "", amount: "6 strips"},
+                {name: "butter", ingredientID: "", amount: "2 tablespoons"},
+                {name: "yellow onion", ingredientID: "", amount: "1 medium"},
+                {name: "celery", ingredientID: "", amount: "2 ribs"},
+                {name: "garlic", ingredientID: "", amount: "3 cloves"},
+                {name: "hot sauce", ingredientID: "", amount: "1 teaspoon"},
+                {name: "Worcestershire sauce", ingredientID: "", amount: "1 teaspoon"},
+                {name: "flour", ingredientID: "", amount: "1/3 cup"},
+                {name: "chicken broth", ingredientID: "", amount: "1 cup"},
+                {name: "Half and Half", ingredientID: "", amount: "3 cups"},
+                {name: "clam juice", ingredientID: "", amount: "8 oz."},
+                {name: "chicken bouillon", ingredientID: "", amount: "1 cube"},
+                {name: "bay leaf", ingredientID: "", amount: "1"},
+                {name: "potatoes", ingredientID: "", amount: "1 ¼ lbs."},
+                {name: "chopped clams", ingredientID: "", amount: "3 (6.5 oz. cans)"},
+                {name: "Fresh parsley & Freshly cracked pepper", ingredientID: "", amount: "na"},]},
+        {name: "Seasonings", ingredients: [{name: "dried oregano", ingredientID: "", amount: "½ teaspoon"},
+                {name: "dried parsley", ingredientID: "", amount: "½ teaspoon"},
+                {name: "dried thyme", ingredientID: "", amount: "¼ teaspoon"},
+                {name: "salt", ingredientID: "", amount: "¼ teaspoon"},
+                {name: "smoked paprika", ingredientID: "", amount: "1/8 teaspoon"},
+                {name: "pepper", ingredientID: "", amount: "1/8 teaspoon"},
+            ]},
+    ],
+    instructions: [{name:"Prep Work", instructions:[{stepBody:"Cook the bacon in a 4.5-quart soup pot slowly over low heat. (I cut my bacon in half, it’s easier to fit it in the pan and have it cook evenly.) While the bacon cooks, measure out remaining ingredients. Once the bacon is cooked, set aside on a paper towel lined plate. Chop once cooled and reserve 2 tablespoons of bacon drippings."},
+                {stepBody:"Wipe any dark spots from the pot but leave as much bacon remnants as you can, as that will add flavor to the soup."},
+        ]},
+        {name:"Make the Soup", instructions:[{stepBody:"Add reserved bacon drippings and butter to the pot over medium heat and use a silicone spatula to “clean” the bottom and sides of the pot. Add the diced onions and celery. Toss to coat and soften for 5-6 minutes. Add the garlic, hot sauce, Worcestershire sauce, and seasonings. Cook for 1 minute."},
+                {stepBody:"Add the flour and cook for 2 minutes stirring continuously, until the raw flour smell is gone."},
+                {stepBody:"Add the chicken broth in small splashes, stirring continuously, and wiping the pan “clean” again as you do so. Add the half and half in the same manner."},
+                {stepBody:"Stir in the chicken bouillon and add the bay leaf. Add the juice from the canned clams to the soup, but don’t add the clams yet. Stir in the additional ( 8 oz.) clam juice.\n"},
+                {stepBody:"Bring the soup to a gentle boil, then reduce to a simmer, so that its just gently bubbling. Simmer for 20 minutes, partially covered. Stir occasionally as it cooks."},
+                {stepBody:"Peel and dice the potatoes and add them to the soup. Bring back to a very gentle bubble and let the potatoes cook through for 20-25 minutes, until fork tender. Reduce heat to low."},
+                {stepBody:"Stir in the clams and let them heat through, about 5 minutes. Remove bay leaf."},
+                {stepBody:"Ladle soup into serving bowls and garnish with roughly chopped parsley, freshly cracked pepper, and chopped bacon."},]},
+    ],
+    isType: [],
+    isVisible: false,
+    name: "Clam Chowder",
+    ownedBy: "10001",
+    recipeArchetype: ""
+
+}
+
+
+const thirdTestRecipe: Recipe = {
+    description: "This Shrimp Alfredo is easy to make and has the best homemade sauce that's perfect for serving with pasta.",
+    descriptionTags: ["shrimp","alfredo","pasta",],
+    favoritedBy: [""],
+    id: "asdftglkhi2q3s35klkkjlpikkolmk",
+    ingredientList: [
+        {name: "Crunchy Panko Topping (Optional)", ingredients: [{name: "Panko breadcrumbs", ingredientID: "", amount: "1/4 cup"},
+                {name: "salted butter", ingredientID: "", amount: "1 tablespoon"},
+                {name: "garlic powder", ingredientID: "", amount: "1/8 teaspoon"},]},
+        {name: "Shrimp Alfredo", ingredients: [{name: "uncooked shrimp", ingredientID: "", amount: "1 lb. large"},
+                {name: "olive oil", ingredientID: "", amount: "1 tablespoon"},
+                {name: "Fettuccine", ingredientID: "", amount: "3/4 lb."},
+                {name: "salted butter", ingredientID: "", amount: "6 tablespoons"},
+                {name: "garlic", ingredientID: "", amount: "3 cloves",},
+                {name: "all-purpose flour", ingredientID: "", amount: "2 Tablespoons"},
+                {name: "half and half", ingredientID: "", amount: "3 cups"},
+                {name: "Parmesan cheese", ingredientID: "", amount: "1/2 cup"},
+                {name: "Asiago cheese", ingredientID: "", amount: "1/2 cup"},
+            ]},
+        {name: "Seasonings", ingredients: [{name: "dried parsley", ingredientID: "", amount: "1 teaspoon"},
+                {name: "dried basil", ingredientID: "", amount: "1/2 teaspoon"},
+                {name: "salt", ingredientID: "", amount: "1/4 teaspoon"},
+                {name: "Freshly cracked pepper", ingredientID: "", amount: "to taste"},]},
+        {name: "For Serving", ingredients: [{name: "Lemon", ingredientID: "", amount: "1"},
+                {name: "Red Pepper Flakes", ingredientID: "", amount: "na"},
+                {name: "Fresh parsley", ingredientID: "", amount: "na"},]},
+    ],
+    instructions: [{name:"Instructions", instructions:[{stepBody:"Measure out ingredients before beginning. Thaw the shrimp completely and pat the surface dry. You may also need to remove the shell, tail, and veins."},
+            {stepBody:"Optional: Toast the Panko breadcrumbs and garlic powder in melted butter in a skillet over medium heat until brown, about 3 minutes. Remove and set aside."},
+            {stepBody:"Heat olive oil in a large skillet over medium-high heat. Add the shrimp and cook for about 1 minute + 20 seconds per side. (Use a timer to avoid overcooking). Tilt the pan to transfer the shrimp onto a clean plate. Note that they’ll cook a little bit more as they sit, and again when added back to the sauce."},
+            {stepBody:"Boil the fettuccine in salted water according to package instructions. Meanwhile, prepare the sauce."},
+            {stepBody:"Melt the butter in the same skillet over medium heat. Add the garlic and cook for one minute."},
+            {stepBody:"Whisk in the flour and cook for 1-2 minutes, stirring continuously."},
+            {stepBody:"Add the seasonings, then add the half and half in small splashes, stirring continuously."},
+            {stepBody:"Bring to a gentle bubble, then reduce heat to low. It will continue to thicken as it simmers."},
+            {stepBody:"Stir in the cheese. Taste and season with salt/pepper if desired."},
+            {stepBody:"When the pasta is done, reserve 2 cups of pasta water and set aside."},
+            {stepBody:"Drain the pasta and add it to the sauce, toss to combine. The pasta will absorb the sauce and it will continue to thicken. If it becomes too thick, add a little pasta water until desired consistency is obtained."},
+            {stepBody:"Add the cooked shrimp and toss. Allow it to heat back through, about 1 minute. Remove from heat."},
+            {stepBody:"Optional: Squeeze a wedge of fresh lemon over the dish and sprinkle with red pepper flakes if desired. Garnish with parsley, toasted panko, and serve with remaining lemon wedges."},
+            {stepBody:"Pro Tip: Save any remaining pasta water and add it as needed for reheating leftovers."},
+        ]}],
+    isType: [],
+    isVisible: false,
+    name: "Shrimp Alfredo",
+    ownedBy: "10001",
+    recipeArchetype: ""
+
+}
+
+
+
 export default TestRecipe;
+export {secondTestRecipe};
