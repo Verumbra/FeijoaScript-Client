@@ -1,5 +1,5 @@
-import React, {ReactNode} from "react";
-import RecipePreview from "../Models/PreviewModel.ts";
+import {ReactNode} from "react";
+
 import HPreviewContainer from "../components/HomeView/HPreviewContainer.tsx";
 import HRPreviewWrapper from "../components/HomeView/HRPreviewWrapper.tsx";
 import RecipePreviewer from "../components/RecipePreviewer.tsx";
