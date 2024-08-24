@@ -1,0 +1,1 @@
+this diretery is for component that are used in the option bar global component.
