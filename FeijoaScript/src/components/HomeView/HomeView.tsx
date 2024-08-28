@@ -19,7 +19,7 @@ interface childProps {
 
 const HomeView: React.FC<childProps> = ({children}) => {
     const [data, setData] = useState<string>('');
-    const indexSize:number = useSelector((state:RootState)=>state.previewList.length)
+    const indexSize:number = useSelector((state:RootState)=>state.homePreviewList.length)
     const handleCallback = (childData:string) => {
         setData(childData);
     };

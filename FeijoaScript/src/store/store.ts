@@ -3,6 +3,7 @@ import userSlice from "../slices/UserSlice.ts";
 import recipeListSlice from "../slices/RecipeSlice.ts"
 import viewSlice from "../slices/ViewSlice.ts"
 import recipePreviewListSlice from "../slices/PreviewSlice.ts"
+import discoveryPreviewSlice from "../slices/DiscoveryPreviewSlice.ts";
 
 
 const store = configureStore({
@@ -10,7 +11,8 @@ const store = configureStore({
         user: userSlice,
         recipeList: recipeListSlice,
         view: viewSlice,
-        previewList: recipePreviewListSlice,
+        homePreviewList: recipePreviewListSlice,
+        discoveryPreviewList: discoveryPreviewSlice,
     }
 });
 

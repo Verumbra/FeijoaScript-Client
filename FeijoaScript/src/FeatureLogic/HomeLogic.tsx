@@ -14,21 +14,21 @@ import {RootState} from "../store/store.ts";
 
 export function HRecipePreviewProcessor(props:number): ReactNode[] {
     console.log(props);
-    let previewList = useSelector((state:RootState) => state.previewList[props].previewList);
+    let previewListSize = useSelector((state:RootState) => state.homePreviewList[props].previewList.length);
 
-    let sizeofList= previewList.length;
-    console.log("value of: "+ sizeofList);
+
+    //console.log("value of: "+ sizeofList);
     let Builder:ReactNode[] = [];
 
     switch (true) {
-        case sizeofList==0 || sizeofList==null || sizeofList==undefined:
+        case previewListSize==0 || previewListSize==null || previewListSize==undefined:
             return Builder;
-        case sizeofList==1:
+        case previewListSize==1:
             break
-        case sizeofList>1:
+        case previewListSize>1:
             let i = 0
-            while (i<sizeofList) {
-                Builder.push(<RecipePreviewer  key={i} placeKey={i} catKey={props} indexKey={i}></RecipePreviewer>)
+            while (i<previewListSize) {
+                Builder.push(<RecipePreviewer  key={i} type="Home" placeKey={i} catKey={props} indexKey={i}></RecipePreviewer>)
                 i++
             }
             break
@@ -41,7 +41,7 @@ function getListName(index:number):string[] {
     let name:string[] = [];
     let i = 0
     while(i<index) {
-        name.push(useSelector((state: RootState) => state.previewList[i].name));
+        name.push(useSelector((state: RootState) => state.homePreviewList[i].name));
         i++
     }
     return name;

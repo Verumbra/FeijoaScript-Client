@@ -2,6 +2,7 @@ import React, {ReactNode} from "react";
 import {useState, useEffect, useCallback} from "react";
 import {useSelector, useDispatch} from "react-redux";
 
+import "../css/DiscoveryView.css";
 
 interface ChildProps {
     children?: ReactNode;
@@ -10,7 +11,9 @@ interface ChildProps {
 
 
 const DiscoveryView: React.FC<ChildProps> = ({children}) => {
-    return <div>Discovery {children}</div>;
+    return <div>
+
+        Discovery {children}</div>;
 }
 
 

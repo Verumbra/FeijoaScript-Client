@@ -25,15 +25,15 @@ let testState= [{name:"runningList", previewList: TestPreviewList1},
 const initialState:PreviewList[] = devOn? testState : [];
 
 const recipePreviewListSlice = createSlice({
-    name: 'previewList',
+    name: 'homePreviewList',
     initialState,
     reducers: {
-        pushList: (state, action: PayloadAction<RecipePreview>) => {
-            state.runningList.push(action.payload);
+        pushHomeItem: (state, action: PayloadAction<{listIndex: number, value:RecipePreview}>) => {
+            state[action.payload.listIndex].previewList.push(action.payload.value);
         },
         //
-        pushNewList: (state, action: PayloadAction<{key:string, value: PreviewList}>) => {
-            state.push(action.payload.value);
+        pushNewHomeList: (state, action: PayloadAction<PreviewList>) => {
+            state.push(action.payload);
         },
         //pushNewItem: (state, action: PayloadAction<{key:string, value: RecipePreview}>) => {}
 
@@ -41,5 +41,5 @@ const recipePreviewListSlice = createSlice({
 })
 
 
-export const {pushItem} = recipePreviewListSlice.actions;
+export const {pushHomeItem} = recipePreviewListSlice.actions;
 export default recipePreviewListSlice.reducer;
