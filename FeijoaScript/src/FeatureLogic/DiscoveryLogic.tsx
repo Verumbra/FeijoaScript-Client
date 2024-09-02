@@ -9,10 +9,10 @@ import RecipePreviewer from "../components/RecipePreviewer.tsx";
 
 
 //this function handles the list of recipe preview from the search results
-function DSearchListProcessor(props:number):ReactNode[] {
+export function DSearchListProcessor(props:number):ReactNode[] {
     let searchListSize = useSelector((state:RootState) => state.discoveryPreviewList[props].previewList.length);
 
-    let builder:ReactNode[] = [];
+    let builder:ReactNode[] = [<div>404 no list found</div>];
 
 
     switch (true) {
@@ -35,7 +35,9 @@ function DSearchListProcessor(props:number):ReactNode[] {
 
 //this function determines both how the DSearchContainer behaves and how many should be produced
 function DSearchContainerHandler(props:any): ReactNode | ReactNode[] {
-    let builder:ReactNode[] | ReactNode;
+    let builder:ReactNode[] | ReactNode = [<div></div>];
+
+
 
 
 }

@@ -9,7 +9,7 @@ interface ChildProps {
 }
 
 
-
+//todo need to hook all the logic up once axois is implemented
 const DiscoveryView: React.FC<ChildProps> = ({children}) => {
     return <div>
 

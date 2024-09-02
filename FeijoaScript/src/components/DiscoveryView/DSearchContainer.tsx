@@ -1,7 +1,8 @@
 import React,{ReactNode} from "react";
+import {useState, useEffect} from "react";
 import {useSelector, useDispatch} from "react-redux";
 
-import
+import {DSearchListProcessor} from "../../FeatureLogic/DiscoveryLogic.tsx";
 
 import "../css/DiscoveryView.css";
 
@@ -18,11 +19,17 @@ interface ChildProps {
 * todo implement scalffuing when Atmos is implemented,
 * todo make this component able to be async
 * todo implement a way for multiple containers to be coexistent */
-const DSearchContainer: React.FC<ChildProps> = ({children, type}) => {
+const DSearchContainer: React.FC<ChildProps> = ({children, type, searchListKey}) => {
+    const [list,setList] = useState(()=>DSearchListProcessor(searchListKey));
 
+    useEffect(()=>{
+        return ()=>{
+            setList(DSearchListProcessor(searchListKey));
+        };
+    }, [searchListKey]);
 
     return <div className={"d-search-container"+`${type}`}>
-
+        {list}
         {children}
     </div>;
 }
